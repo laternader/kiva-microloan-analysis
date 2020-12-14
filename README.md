@@ -2,28 +2,32 @@
 
 ##### Presented by James Salisbury, Sid Carter, and Nader Esmael
 
-![Header](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/kiva-header.jpg)
+![Header](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/kiva-header.jpg)
 
 ## Table of Contents
 
 README:
-- [Problem Statement](#problem-statement)
-- [Data](#data)
-  - [Data Dictionary](#data-dictionary)
-- [EDA](#eda)
-- [Conclusions](#conclusions)
-- [Next Steps](#next-steps)
+- [It's Kiva Time](#its-kiva-time)
+        - [Presented by James Salisbury, Sid Carter, and Nader Esmael](#presented-by-james-salisbury-sid-carter-and-nader-esmael)
+  - [Table of Contents](#table-of-contents)
+  - [+ Images](#-images)
+  - [Problem Statement](#problem-statement)
+  - [Data](#data)
+    - [Data Dictionary](#data-dictionary)
+  - [EDA](#eda)
+  - [Conclusions](#conclusions)
+  - [Next Steps](#next-steps)
 
 Directories:
-+ [Code](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/tree/master/Code)
-  + [Data Cleaning Notebook](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Code/01_Data_Cleaning.ipynb)
-  + [EDA Notebook](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Code/02_EDA.ipynb)
-  + [Final Models](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/tree/master/Code/Final_Models)
++ [Code](https://github.com/laternader/kiva-microloan-analysis/tree/master/Code)
+  + [Data Cleaning Notebook](https://github.com/laternader/kiva-microloan-analysis/blob/master/Code/01_Data_Cleaning.ipynb)
+  + [EDA Notebook](https://github.com/laternader/kiva-microloan-analysis/blob/master/Code/02_EDA.ipynb)
+  + [Final Models](https://github.com/laternader/kiva-microloan-analysis/tree/master/Code/Final_Models)
     + Folder contains all notebooks that contains models that we considered as our final or best-result producing models
-+ [Data](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/tree/master/Data)
++ [Data](https://github.com/laternader/kiva-microloan-analysis/tree/master/Data)
   + `loans_cleaned.csv` - cleaned data
   + `loans.csv` - original data
-+ [Images](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/tree/master/Images)
++ [Images](https://github.com/laternader/kiva-microloan-analysis/tree/master/Images)
 ---
 
 ## Problem Statement
@@ -75,27 +79,27 @@ After preprocessing the data, we wanted to find any trends in the data that coul
 
 We grouped the data by country and loan year to calculate aggregates (sum, mean, count, min, max) for `hours_to_fund` and `loan_amounts`. Once we did that, we noticed that the Philippines was one of the most successful in total number of microloans getting funded (392018). However, that was partly due to them having one of the lowest averages in loan amount (around $334). We think that `loan_amount` might have been a crucial factor in the speed/time at which a microloan was funded. The country might not be an important factor however, the Philippines was doing something right when it came to asking for money and paying it back.
 
-![Philippines is at the top](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/country_name_top10s.png)
+![Philippines is at the top](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/country_name_top10s.png)
 
-![Low Loan asking point](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/top10_lowest_loanamt_avgs.png)
+![Low Loan asking point](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/top10_lowest_loanamt_avgs.png)
 
 After taking that trend into account, we also noticed that females had over 40% more success rate in getting funding for a microloan. The same trend was seen in `repayment_interval`.
 
-![females for the win](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/Inkedborrower_genders_top10s_LI.jpg)
+![females for the win](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/Inkedborrower_genders_top10s_LI.jpg)
 
-![repayment](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/Inkedrepayment_interval_top10s_LI.jpg)
+![repayment](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/Inkedrepayment_interval_top10s_LI.jpg)
 
 Since our target variable was `hours_to_fund`, we plotted the distribution. It was a positive skew so majority of loans were being funded under the average amount of hours (around 40 days).
 
-![hrs 2 fund eda](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/hrs_2_fund_eda.png)
+![hrs 2 fund eda](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/hrs_2_fund_eda.png)
 
 The skew also matched the `loan_amounts`. Historically, most loans successfully funded were under the average (less than $800).
 
-![loan amt eda](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/loan_amt_eda.png)
+![loan amt eda](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/loan_amt_eda.png)
 
 As we delved deeper into the EDA, we took into account these trends as we began to run our models. It helped eliminate any outliers as well as maintain distributions. One thing that was concerning was the numerical data having little to no correlation with hours to fund. We assumed that at this point that maybe the categorical columns played a larger role, possibly a larger role than `loan_amount`! We feared that `hours_to_fund` may not be a good target variable. It all depended on our models.
 
-![heatmap hrs to fund](https://git.generalassemb.ly/laternader/timmy-needs-a-loan/blob/master/Images/heatmap_hrs_2_fund.png)
+![heatmap hrs to fund](https://github.com/laternader/kiva-microloan-analysis/blob/master/Images/heatmap_hrs_2_fund.png)
 
 ## Conclusions
 
