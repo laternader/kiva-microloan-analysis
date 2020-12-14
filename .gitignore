@@ -1,0 +1,17 @@
+*.ipynb_checkpoints
+*.pyc
+loans_summary.pdf
+02_EDA-Copy1.ipynb
+not-deleted-EDA.ipynb
+feature_cypher.xlsx
+
+
+loans_lenders.csv
+lenders.csv
+kiva_ds_csv.zip
+GP-Check-Data.ipynb
+
+01_Data_Cleaning_Live.ipynb
+kiva_api_pull.ipynb
+kiva_scratchpad.ipynb
+remove/
